@@ -1,0 +1,351 @@
+.calendar-page {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(139, 118, 160);
+}
+
+.title-main {
+    margin-top: 36px;
+    font-size: 3em;
+}
+
+.top-box {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 40%;
+    border-radius: 16px;
+    background-color: rgb(196, 189, 202);
+    padding: 36px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.493);
+    flex-direction: column;
+}
+
+.events-box {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 40%;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: rgb(196, 189, 202);
+    padding: 36px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.493);
+}
+
+.main-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgb(105, 54, 126);
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.377);
+    width: 100%;
+    margin-top: 16px;
+}
+
+.first-box {
+    display: flex;
+    min-width: 30%;
+    padding-right: 16px;
+    border-right: 5px solid black;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 80px;
+}
+
+.second-box {
+    display: flex;
+    border-left: 5px solid white;
+    min-width: 70%;
+    padding-left: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80px;
+}
+
+span {
+    font-weight: 600;
+    font-size: 1em;
+    color:rgb(219, 219, 219);
+}
+
+.form-span {
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.create-button {
+    width: 250px;
+    margin-top: 16px;
+    background-color: rgb(105, 54, 126);
+    margin: 8px;
+}
+
+.button-text {
+    color:rgb(219, 219, 219);
+    font-size: 1em;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-box  {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+table {
+    font-family: sans-serif;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 10px;
+    border-spacing: 0;
+    border-collapse: separate;
+    table-layout: fixed;
+    margin-bottom: 50px;
+  }
+  
+  table thead tr th {
+    background: #78627e;
+    color: #d1d5db;
+    padding: 0.5em;
+    overflow: hidden;
+  }
+  
+  table thead tr th:first-child {
+    border-radius: 3px 0 0 0;
+  }
+  
+  table thead tr th:last-child {
+    border-radius: 0 3px 0 0;
+  }
+  
+  table thead tr th .day {
+    display: block;
+    font-size: 1em;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 5px;
+    padding: 5px;
+    line-height: 1.8;
+  }
+  
+  table thead tr th .day.active {
+    background: #d1d5db;
+    color: #626e7e;
+  }
+  
+  table thead tr th .short {
+    display: none;
+  }
+  
+  table thead tr th i {
+    vertical-align: middle;
+    font-size: 1em;
+  }
+  
+  table tbody tr {
+    background: #d1d5db;
+    
+    color: #d1d5db;
+    padding: 0.5em;
+    overflow: hidden;
+  }
+  
+  table tbody tr:nth-child(odd) {
+    background: #c8cdd4;
+  }
+  
+  table tbody tr:nth-child(1n + 0) td {
+    border-bottom: 1px solid #626e7e;
+  }
+  
+  table tbody tr td {
+    text-align: center;
+    vertical-align: middle;
+    border-left: 1px solid #626e7e;
+    position: relative;
+    height: 80px;
+    color:black;
+    cursor: pointer;
+  }
+  
+  table tbody tr td:last-child {
+    border-right: 1px solid #626e7e;
+  }
+  
+  table tbody tr td.hour {
+    font-size: 1em;
+    padding: 0;
+    color: #626e7e;
+    background: #fff;
+    border-bottom: 1px solid #626e7e;
+    border-collapse: separate;
+    min-width: 100px;
+    cursor: default;
+  }
+  
+  table tbody tr td.hour span {
+    display: block;
+  }
+  
+  @media (max-width: 60em) {
+    table thead tr th .long {
+        display: none;
+    }
+  
+    table thead tr th .short {
+        display: block;
+    }
+  
+    table tbody tr td.hour span {
+        transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+    }
+  }
+  
+  @media (max-width: 27em) {
+    table thead tr th {
+        font-size: 30%;
+    }
+  
+    table thead tr th .day {
+        display: block;
+        font-size: 1em;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto 5px;
+        padding: 5px;
+    }
+  
+    table thead tr th .day.active {
+        background: #d1d5db;
+        color: #626e7e;
+    }
+  
+    table tbody tr td.hour {
+        font-size: 1em;
+    }
+  
+    table tbody tr td.hour span {
+        transform: translateY(16px) rotate(270deg);
+        -webkit-transform: translateY(16px) rotate(270deg);
+        -moz-transform: translateY(16px) rotate(270deg);
+    }
+  }
+  
+  .jumbotron {
+  text-align: center;
+  width: 30rem;
+  border-radius: 0.5rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: 4rem auto;
+  background-color: #fff;
+  padding: 1.5rem;
+  }
+  
+  
+  .container .glyphicon-list-alt {
+  color: #f96145;
+  }
+  h2 {
+    font-family: sans-serif;
+    font-size: 1.8em;
+  font-weight: bold;
+  }
+  .btn {
+  border-radius: 0.2rem;
+    transition: all 0.2s;
+    margin-top: 8px;
+    padding: 8px 0px;
+    border: none;
+    font-weight: 600;
+    background-color: #535961!important;
+  }
+  .btn:hover {
+    transform: scale(1.02);
+    background-color: #393d42!important;
+  }
+  
+  .form-span {
+    color: rgb(228, 228, 228);
+    font-weight: 600;
+    font-size: 1.5em;
+  }
+  
+  .header-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .doidera {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+  }
+  
+  .title-page{
+    font-size: 5em;
+    width: 100%;
+    margin: 18px;
+    text-align: center;
+    color: rgb(228, 228, 228);
+  }
+  
+  .btn .glyphicon {
+  font-size: 1.3rem;
+    color: #fff;
+  }
+  .full-width {
+  background-color: #8eb5e2;
+  width: 100%;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  }
+  
+  .box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 3rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  }
