@@ -119,6 +119,25 @@ span {
 }
 
 
+.button-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-table:hover {
+  transform: scale(1.0) !important;
+}
+
+.delete-button {
+  background-color: rgb(255, 27, 27);
+  width: 32px;
+  font-size: 0.8em;
+  color: white;
+  height: 32px;
+}
+
 table {
     font-family: sans-serif;
     width: 80%;
@@ -288,14 +307,14 @@ table {
   .btn {
   border-radius: 0.2rem;
     transition: all 0.2s;
-    margin-top: 8px;
     padding: 8px 0px;
+    margin: 8px 8px;
     border: none;
     font-weight: 600;
     background-color: #535961!important;
   }
   .btn:hover {
-    transform: scale(1.02);
+    transform: scale(1.00);
     background-color: #393d42!important;
   }
   

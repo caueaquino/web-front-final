@@ -18,3 +18,7 @@ export const listEvents = () => {
 export const createEvent = (name, day, hour) => {
     axios.post(url, {name, day, hour});
 }
+
+export const deleteEvent = (id) => {
+    axios.delete(url, {id});
+}

@@ -10,6 +10,7 @@ export default class Calendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: '',
       name: '',
       day: '1',
       hour: '1:00',
@@ -24,6 +25,13 @@ export default class Calendar extends Component {
   async createEvent() {
     const {name, day, hour} = this.state;
     calendarService.createEvent(name, day, hour);
+    this.setState({ calendar: await calendarService.listEvents() });
+    document.location.reload();
+  }
+
+  async deleteEvent(rs) {
+    const id = rs._id;
+    calendarService.deleteEvent(id);
     this.setState({ calendar: await calendarService.listEvents() });
     document.location.reload();
   }
@@ -76,8 +84,10 @@ export default class Calendar extends Component {
         
       for(let i = 1; i < 8; i++) {
           rowTable.push(<td>{this.state.calendar.map(rs => {
-                          if(rs.hour == j+':00' && rs.day === i+'') {
-                            return <li>{rs.name}</li>}
+                          if(rs.hour === j+':00' && rs.day === i+'') {
+                            return <button className="button-table">{rs.name}
+                                      <button className="delete-button" onClick={() => {this.deleteEvent(rs)}}>X</button>
+                                   </button>}
                           }
                           )}
                         </td>);
